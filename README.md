@@ -4,4 +4,4 @@
 3. In cmd or IDE terminal open folder with manage.py
 4. Write in terminal 'python manage.py runserver'
 5. After come in your browser, and use in url path(port standart 8000 but you can check in terminal after start):
- 'localhost:<port>/paraphrase?tree=<your tree>&limit=<number of copies>'
+ 'localhost:8000/paraphrase?tree=(your tree)&limit=(number of copies)'
