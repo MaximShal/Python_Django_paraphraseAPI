@@ -15,7 +15,7 @@ def paraphrase(request):
     if not 0 < limit <= 20:
         limit = 20
 
-    tree = Tree.fromstring(tree_str)
+    tree_nltk = Tree.fromstring(tree_str)
 
     # повертає нове синтаксичне дерево з перефразуванням 'NP'
     def tree_paraphrase(tree):
@@ -48,8 +48,8 @@ def paraphrase(request):
         return new_tree
 
     # створення json для відповіді
-    response_data = {'paraphrases': [],}
+    response_data = {'paraphrases': [], }
     for _ in range(limit):
-        response_data['paraphrases'].append({'tree': str(tree_paraphrase(tree))})
+        response_data['paraphrases'].append({'tree': str(tree_paraphrase(tree_nltk))})
 
     return JsonResponse(response_data)
